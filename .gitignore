@@ -137,3 +137,22 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# === Electron ===
+out/
+release/
+app.asar
+*.asar
+*.asar.unpacked/
+
+# === Electron Builder / Forge outputs ===
+*.exe
+*.dmg
+*.AppImage
+*.snap
+*.deb
+*.rpm
+*.msi
+
+# macOS signing artifacts
+*.pkg
