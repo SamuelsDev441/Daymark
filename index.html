@@ -12,7 +12,7 @@
   />
 </head>
 <link rel="stylesheet" href="styles.css">
-<body>
+<body id="body">
   <div class="layout">
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
@@ -70,7 +70,57 @@
     document.addEventListener('DOMLoaded')
     function getStarted() {
       if (loadFileContent() == "start") {
+        document.getElementById("body").innerHTML = '
+            <
+          '<div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title">Menu</div>
+        <button class="toggle-btn" onclick="toggleSidebar()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
 
+      <nav>
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-house icon"></i>
+              <span class="text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-calendar icon"></i>
+              <span class="text">Calendar</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-cross icon"></i>
+              <span class="text">Devotionals</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-gear icon"></i>
+              <span class="text">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="hero-text">
+        <h1>Welcome, sir, to the latest hello!.</h1>
+        <h2>Daymark is a futuristic calendar app meant to organize your projects, schoolwork, and everything else.</h2>
+        <button class="button" onclick="getStarted()">Get Started</button>
+      </div>
+    </main>
+  </div>'
       }
     }
     // Example of reading a file
@@ -98,7 +148,9 @@ async function saveFileContent() {
     console.error('Error writing file:', err);
   }
 }
-
+function getStarted() {
+  saveFileContent()
+}
 // Call the functions when needed, e.g., on a button click
 // document.getElementById('load-button').addEventListener('click', loadFileContent);
 // document.getElementById('save-button').addEventListener('click', saveFileContent);
